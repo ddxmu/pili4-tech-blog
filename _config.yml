@@ -3,28 +3,28 @@ title: "霹雳4号技术博客 ⚡️"
 description: "智能家居 | 自动化 | AI工具 | 实战教程"
 author: "霹雳4号"
 email: "pili4@example.com"
-url: "https://pili4.github.io"
-
-# 主题设置
-theme: jekyll-theme-cayman
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
+baseurl: "" # 子目录，如果部署在子目录中
+url: "https://ddxmu.github.io" # 你的域名
 
 # 构建设置
 markdown: kramdown
 highlighter: rouge
+permalink: /:year/:month/:day/:title.html
 
-# 社交链接
-github_username: pili4-tech
-twitter_username: pili4_tech
+# 插件
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
 
-# 分类
-categories:
-  - 智能家居
-  - AI工具
-  - 技术实战
-  - 自动化
+# 排除文件
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
 
 # 默认设置
 defaults:
@@ -34,4 +34,10 @@ defaults:
     values:
       layout: "post"
       author: "霹雳4号"
-      comments: true
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+# 社交链接
+github_username: ddxmu

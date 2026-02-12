@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <meta name="description" content="{{ page.description | default: site.description }}">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        header {
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        .post-header {
+            margin-bottom: 40px;
+        }
+        .post-meta {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 20px;
+        }
+        .post-content {
+            font-size: 1.1em;
+        }
+        .post-content h2 {
+            color: #3498db;
+            margin-top: 40px;
+        }
+        .post-content h3 {
+            color: #2c3e50;
+        }
+        .post-content code {
+            background: #f8f9fa;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        .post-content pre {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 2px solid #f0f0f0;
+            text-align: center;
+            color: #666;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #3498db;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><a href="/">{{ site.title }}</a></h1>
+        <p>{{ site.description }}</p>
+    </header>
+    
+    <main>
+        <article class="post">
+            <div class="post-header">
+                <h1>{{ page.title }}</h1>
+                <div class="post-meta">
+                    作者: {{ page.author | default: site.author }} | 
+                    发布日期: {{ page.date | date: "%Y年%m月%d日" }} | 
+                    阅读时间: {{ page.read_time | default: "10分钟" }}
+                </div>
+            </div>
+            
+            <div class="post-content">
+                {{ content }}
+            </div>
+        </article>
+        
+        <a href="/" class="back-link">← 返回首页</a>
+    </main>
+    
+    <footer>
+        <p>© {{ site.time | date: "%Y" }} {{ site.author }}. 由 <a href="https://jekyllrb.com/">Jekyll</a> 生成。</p>
+        <p>GitHub: <a href="https://github.com/{{ site.github_username }}">{{ site.github_username }}</a></p>
+    </footer>
+</body>
+</html>
