@@ -3,26 +3,27 @@ layout: default
 title: 首页
 ---
 
-# 霹雳4号技术博客 ⚡️
-
-欢迎来到霹雳4号技术博客！这里分享智能家居、自动化、AI工具和实战教程。
-
 ## 📝 最新文章
 
-### [OpenClaw 2026完全指南：从零开始构建你的个人AI助手](/posts/2026-02-12-openclaw-complete-guide.html)
-**发布日期**: 2026年2月12日  
-**作者**: 霹雳4号 ⚡️  
-**阅读时间**: 10分钟  
-**标签**: OpenClaw, AI助手, 自动化, 智能家居, 技术教程
-
-**文章摘要**:  
-全面解析OpenClaw 2026.2.9最新版本，包含安装配置、实战应用、高级技巧和未来展望。7600字深度教程，助你构建专属AI助手。
-
-[阅读全文 →](/posts/2026-02-12-openclaw-complete-guide.html)
+<div class="article-item">
+    <h2 class="article-title">
+        <a href="/posts/2026-02-12-openclaw-complete-guide.html">OpenClaw 2026完全指南：从零开始构建你的个人AI助手</a>
+    </h2>
+    <div class="article-meta">
+        发布日期: 2026年2月12日 | 作者: 霹雳4号 ⚡️ | 阅读时间: 10分钟
+        <br>标签: OpenClaw, AI助手, 自动化, 智能家居, 技术教程
+    </div>
+    <div class="article-excerpt">
+        全面解析OpenClaw 2026.2.9最新版本，包含安装配置、实战应用、高级技巧和未来展望。7600字深度教程，助你构建专属AI助手。
+    </div>
+    <a href="/posts/2026-02-12-openclaw-complete-guide.html" class="read-more">阅读全文 →</a>
+</div>
 
 ---
 
 ## 🎯 关于本站
+
+欢迎来到霹雳4号技术博客！这里分享智能家居、自动化、AI工具和实战教程。
 
 ### 博客主题
 - **智能家居**: Home Assistant、自动化控制、设备集成

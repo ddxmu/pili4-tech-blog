@@ -6,64 +6,179 @@
     <title>{{ page.title }} | {{ site.title }}</title>
     <meta name="description" content="{{ page.description | default: site.description }}">
     <style>
+        /* 基础重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        
+        .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 20px;
-            color: #333;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
+        
+        /* 头部样式 */
         header {
-            border-bottom: 2px solid #f0f0f0;
-            padding-bottom: 20px;
+            text-align: center;
             margin-bottom: 40px;
-        }
-        h1 {
-            color: #2c3e50;
-        }
-        .post-list {
-            list-style: none;
-            padding: 0;
-        }
-        .post-item {
-            margin-bottom: 30px;
             padding-bottom: 20px;
-            border-bottom: 1px solid #eee;
+            border-bottom: 2px solid #e9ecef;
         }
-        .post-title {
-            font-size: 1.5em;
+        
+        .site-title {
+            font-size: 2.5em;
+            color: #2c3e50;
             margin-bottom: 10px;
         }
-        .post-date {
+        
+        .site-title a {
+            color: #2c3e50;
+            text-decoration: none;
+        }
+        
+        .site-title a:hover {
+            color: #3498db;
+        }
+        
+        .site-description {
+            color: #666;
+            font-size: 1.1em;
+        }
+        
+        /* 主要内容 */
+        main {
+            margin-bottom: 40px;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+        
+        h2 {
+            color: #3498db;
+            margin: 30px 0 15px 0;
+            font-size: 1.5em;
+        }
+        
+        h3 {
+            color: #2c3e50;
+            margin: 20px 0 10px 0;
+        }
+        
+        /* 文章列表 */
+        .article-list {
+            list-style: none;
+        }
+        
+        .article-item {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .article-title {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+        
+        .article-title a {
+            color: #2c3e50;
+            text-decoration: none;
+        }
+        
+        .article-title a:hover {
+            color: #3498db;
+        }
+        
+        .article-meta {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        
+        .article-excerpt {
+            color: #555;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        
+        .read-more {
+            display: inline-block;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .read-more:hover {
+            text-decoration: underline;
+        }
+        
+        /* 页脚 */
+        footer {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 2px solid #e9ecef;
             color: #666;
             font-size: 0.9em;
         }
-        .post-excerpt {
-            color: #555;
+        
+        footer a {
+            color: #3498db;
+            text-decoration: none;
         }
-        footer {
-            margin-top: 50px;
-            padding-top: 20px;
-            border-top: 2px solid #f0f0f0;
-            text-align: center;
-            color: #666;
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+            
+            .site-title {
+                font-size: 2em;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1><a href="/">{{ site.title }}</a></h1>
-        <p>{{ site.description }}</p>
-    </header>
-    
-    <main>
-        {{ content }}
-    </main>
-    
-    <footer>
-        <p>© {{ site.time | date: "%Y" }} {{ site.author }}. 由 <a href="https://jekyllrb.com/">Jekyll</a> 生成。</p>
-        <p>GitHub: <a href="https://github.com/{{ site.github_username }}">{{ site.github_username }}</a></p>
-    </footer>
+    <div class="container">
+        <header>
+            <h1 class="site-title"><a href="/">{{ site.title }}</a></h1>
+            <p class="site-description">{{ site.description }}</p>
+        </header>
+        
+        <main>
+            {{ content }}
+        </main>
+        
+        <footer>
+            <p>© {{ site.time | date: "%Y" }} {{ site.author }}. 由 <a href="https://jekyllrb.com/">Jekyll</a> 生成。</p>
+            <p>GitHub: <a href="https://github.com/{{ site.github_username }}">{{ site.github_username }}</a></p>
+        </footer>
+    </div>
 </body>
 </html>
