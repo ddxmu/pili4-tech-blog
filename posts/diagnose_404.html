@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>404问题诊断</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        .test { margin: 20px 0; padding: 15px; background: #f0f0f0; }
+        .success { background: #d4edda; }
+        .error { background: #f8d7da; }
+    </style>
+</head>
+<body>
+    <h1>404问题诊断页面</h1>
+    
+    <div class="test">
+        <h3>测试1: 直接链接访问</h3>
+        <p><a href="/posts/openclaw-multi-agent-architecture.html" target="_blank">测试文章1</a></p>
+        <p><a href="/posts/openclaw-api-security.html" target="_blank">测试文章2</a></p>
+    </div>
+    
+    <div class="test">
+        <h3>测试2: JavaScript重定向</h3>
+        <button onclick="window.location='/posts/openclaw-multi-agent-architecture.html'">
+            JS跳转测试
+        </button>
+    </div>
+    
+    <div class="test">
+        <h3>当前页面信息</h3>
+        <p>URL: <span id="current-url"></span></p>
+        <p>时间: <span id="current-time"></span></p>
+    </div>
+    
+    <script>
+        document.getElementById('current-url').textContent = window.location.href;
+        document.getElementById('current-time').textContent = new Date().toLocaleString();
+        
+        // 自动测试链接
+        setTimeout(function() {
+            var testLinks = document.querySelectorAll('a');
+            testLinks.forEach(function(link) {
+                var xhr = new XMLHttpRequest();
+                xhr.open('HEAD', link.href);
+                xhr.onload = function() {
+                    if (xhr.status === 200) {
+                        link.style.backgroundColor = '#d4edda';
+                    } else {
+                        link.style.backgroundColor = '#f8d7da';
+                        console.log('链接失败:', link.href, '状态:', xhr.status);
+                    }
+                };
+                xhr.send();
+            });
+        }, 1000);
+    </script>
+</body>
+</html>

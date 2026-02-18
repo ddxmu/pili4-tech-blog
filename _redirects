@@ -1,0 +1,11 @@
+# 文章重定向保障
+/posts/openclaw-multi-agent-architecture.html  /posts/openclaw-multi-agent-architecture.html 200
+/posts/openclaw-api-security.html             /posts/openclaw-api-security.html 200
+/posts/openclaw-complete-guide.html           /posts/openclaw-complete-guide.html 200
+/posts/home-assistant-health-check.html       /posts/home-assistant-health-check.html 200
+
+# 备用路径（如果主要路径失败）
+/openclaw-multi-agent-architecture.html       /posts/openclaw-multi-agent-architecture.html 302
+/openclaw-api-security.html                   /posts/openclaw-api-security.html 302
+/openclaw-complete-guide.html                 /posts/openclaw-complete-guide.html 302
+/home-assistant-health-check.html             /posts/home-assistant-health-check.html 302
