@@ -9,7 +9,7 @@ url: "https://ddxmu.github.io" # 你的域名
 # 构建设置
 markdown: kramdown
 highlighter: rouge
-permalink: /:year/:month/:day/:title.html
+permalink: pretty
 
 # 插件
 plugins:

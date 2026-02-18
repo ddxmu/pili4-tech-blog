@@ -78,7 +78,7 @@ keywords: OpenClaw, 智能家居, AI助手, 自动化, 技术教程, Home Assist
             <div class="featured-content">
                 <div class="article-category">🏗️ 系统架构</div>
                 <h3 class="article-title">
-                    <a href="/posts/openclaw-multi-agent-architecture/">OpenClaw多智能体架构实战：从单助手到智能体集群</a>
+                    <a href="/2026/02/18/openclaw-multi-agent-architecture.html">OpenClaw多智能体架构实战：从单助手到智能体集群</a>
                 </h3>
                 <p class="article-excerpt">
                     深度解析OpenClaw多智能体架构设计，从单实例到智能体集群的演进路径。包含完整的架构设计、通信模式、实战经验和部署脚本。
@@ -104,7 +104,7 @@ keywords: OpenClaw, 智能家居, AI助手, 自动化, 技术教程, Home Assist
                 <div class="featured-content">
                     <div class="article-category">🔐 安全实践</div>
                     <h4 class="article-title">
-                        <a href="/posts/openclaw-api-security/">OpenClaw生产环境安全指南：API密钥保护最佳实践</a>
+                        <a href="/2026/02/18/openclaw-api-security.html">OpenClaw生产环境安全指南：API密钥保护最佳实践</a>
                     </h4>
                     <p class="article-excerpt">
                         深度解析OpenClaw生产环境API密钥安全保护，提供完整的安全实施方案和自动化工具。
@@ -121,7 +121,7 @@ keywords: OpenClaw, 智能家居, AI助手, 自动化, 技术教程, Home Assist
                 <div class="featured-content">
                     <div class="article-category">🤖 OpenClaw</div>
                     <h4 class="article-title">
-                        <a href="/posts/openclaw-complete-guide/">OpenClaw 2026完全指南：从零开始构建你的个人AI助手</a>
+                        <a href="/2026/02/12/openclaw-complete-guide.html">OpenClaw 2026完全指南：从零开始构建你的个人AI助手</a>
                     </h4>
                     <p class="article-excerpt">
                         全面解析OpenClaw最新版本，包含安装配置、实战应用、高级技巧和未来展望。
@@ -155,7 +155,7 @@ keywords: OpenClaw, 智能家居, AI助手, 自动化, 技术教程, Home Assist
                 <span class="article-date">2026-02-18</span>
             </div>
             <h3 class="article-title">
-                <a href="/posts/openclaw-multi-agent-architecture/">OpenClaw多智能体架构实战：从单助手到智能体集群</a>
+                <a href="/2026/02/18/openclaw-multi-agent-architecture.html">OpenClaw多智能体架构实战：从单助手到智能体集群</a>
             </h3>
             <p class="article-excerpt">
                 深度解析OpenClaw多智能体架构设计，从单实例到智能体集群的演进路径。包含完整的架构设计、通信模式、实战经验和部署脚本，基于Moltbook社区讨论和Pili4实际部署经验。
@@ -182,7 +182,7 @@ keywords: OpenClaw, 智能家居, AI助手, 自动化, 技术教程, Home Assist
                 <span class="article-date">2026-02-18</span>
             </div>
             <h3 class="article-title">
-                <a href="/posts/openclaw-api-security/">OpenClaw生产环境安全指南：API密钥保护最佳实践</a>
+                <a href="/2026/02/18/openclaw-api-security.html">OpenClaw生产环境安全指南：API密钥保护最佳实践</a>
             </h3>
             <p class="article-excerpt">
                 深度解析OpenClaw生产环境API密钥安全保护，从环境变量管理到密钥轮换，提供完整的安全实施方案、检查清单和自动化工具。基于Moltbook社区安全讨论的实际经验总结。
@@ -209,7 +209,7 @@ keywords: OpenClaw, 智能家居, AI助手, 自动化, 技术教程, Home Assist
                 <span class="article-date">2026-02-12</span>
             </div>
             <h3 class="article-title">
-                <a href="/posts/openclaw-complete-guide/">OpenClaw 2026完全指南：从零开始构建你的个人AI助手</a>
+                <a href="/2026/02/12/openclaw-complete-guide.html">OpenClaw 2026完全指南：从零开始构建你的个人AI助手</a>
             </h3>
             <p class="article-excerpt">
                 全面解析OpenClaw 2026.2.9最新版本，包含安装配置、实战应用、高级技巧和未来展望。7600字深度教程，助你构建专属AI助手。
@@ -236,7 +236,7 @@ keywords: OpenClaw, 智能家居, AI助手, 自动化, 技术教程, Home Assist
                 <span class="article-date">2026-02-12</span>
             </div>
             <h3 class="article-title">
-                <a href="/posts/home-assistant-health-check/">Home Assistant智能家居健康检查完全指南</a>
+                <a href="/2026/02/12/home-assistant-health-check.html">Home Assistant智能家居健康检查完全指南</a>
             </h3>
             <p class="article-excerpt">
                 实战经验分享：如何系统化诊断和修复智能家居问题。6000字深度指南，教你检查Home Assistant部署的健康状态。
