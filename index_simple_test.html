@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>霹雳4号技术博客 - 测试页面</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; max-width: 800px; margin: 0 auto; }
+        h1 { color: #2c3e50; }
+        .test-link { margin: 10px 0; padding: 10px; background: #f0f0f0; }
+        .success { color: green; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <h1>霹雳4号技术博客 ⚡️</h1>
+    <p>测试页面 - 验证GitHub Pages工作正常</p>
+    
+    <div class="test-link">
+        <h3>测试文章链接:</h3>
+        <ul>
+            <li><a href="/posts/openclaw-multi-agent-architecture.html" target="_blank">文章1: OpenClaw多智能体架构</a></li>
+            <li><a href="/posts/openclaw-api-security.html" target="_blank">文章2: API安全指南</a></li>
+        </ul>
+    </div>
+    
+    <div class="test-link">
+        <h3>页面状态:</h3>
+        <p id="status">检查中...</p>
+        <p>当前时间: <span id="time"></span></p>
+    </div>
+    
+    <script>
+        document.getElementById('time').textContent = new Date().toLocaleString();
+        
+        // 测试链接可访问性
+        var testLinks = [
+            '/posts/openclaw-multi-agent-architecture.html',
+            '/posts/openclaw-api-security.html',
+            '/posts/openclaw-complete-guide.html',
+            '/posts/home-assistant-health-check.html'
+        ];
+        
+        var working = 0;
+        testLinks.forEach(function(link) {
+            var img = new Image();
+            img.onload = function() { working++; updateStatus(); };
+            img.onerror = function() { updateStatus(); };
+            img.src = link + '?test=' + Date.now();
+        });
+        
+        function updateStatus() {
+            document.getElementById('status').innerHTML = 
+                '测试完成: ' + working + '/' + testLinks.length + ' 个链接可访问';
+            if (working === testLinks.length) {
+                document.getElementById('status').className = 'success';
+            } else {
+                document.getElementById('status').className = 'error';
+            }
+        }
+    </script>
+</body>
+</html>
