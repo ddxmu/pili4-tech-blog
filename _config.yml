@@ -1,15 +1,16 @@
-# 霹雳4号技术博客配置 - 简化版，解决404问题
+# 霹雳4号技术博客配置
 title: "霹雳4号技术博客 ⚡️"
 description: "智能家居 | 自动化 | AI工具 | 实战教程"
 author: "霹雳4号"
-url: "https://ddxmu.github.io/pili4-tech-blog"
 
-# 关键修复：禁用permalink处理，使用静态HTML文件
-permalink: none
+# 关键修复：正确的baseurl配置
+baseurl: "/pili4-tech-blog"  # GitHub Pages子目录
+url: "https://ddxmu.github.io"  # GitHub域名
 
 # 构建设置
 markdown: kramdown
 highlighter: rouge
+permalink: pretty
 
 # 排除文件
 exclude:
