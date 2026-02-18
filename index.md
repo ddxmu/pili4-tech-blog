@@ -5,6 +5,7 @@ description: 分享OpenClaw、Home Assistant、AI工具实战经验，提供深�
 keywords: OpenClaw, 智能家居, AI助手, 自动化, 技术教程, Home Assistant
 ---
 
+<div class="test-fix">🚨 CSS测试：如果这个红色盒子可见，说明CSS工作</div>
 <!-- 英雄区域 -->
 <div class="hero-section">
     <div class="hero-content">

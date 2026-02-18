@@ -25,7 +25,6 @@
     
     <!-- 预加载关键资源 -->
     <link rel="preload" href="/assets/css/home-optimized.css" as="style">
-    <link rel="stylesheet" href="/assets/css/test_fix.css">
     <link rel="preload" href="/assets/js/home-interactive.js" as="script">
     
     <!-- 基础样式 -->
@@ -98,7 +97,6 @@
     
     <!-- 优化样式 -->
     <link rel="stylesheet" href="/assets/css/home-optimized.css">
-    <link rel="stylesheet" href="/assets/css/test_fix.css">
     
     <!-- 字体图标（可选） -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">

@@ -1,0 +1,17 @@
+/* 紧急修复CSS */
+.hero-section {
+    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%) !important;
+    color: white !important;
+    padding: 80px 20px 120px !important;
+    position: relative !important;
+    overflow: hidden !important;
+    text-align: center !important;
+    border: 5px solid red !important; /* 测试边框 */
+}
+
+.test-fix {
+    background: red !important;
+    color: white !important;
+    padding: 20px !important;
+    margin: 20px !important;
+}

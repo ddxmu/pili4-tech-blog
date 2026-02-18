@@ -1,0 +1,12 @@
+<script>
+// 检查CSS是否应用到元素
+window.onload = function() {
+    var hero = document.querySelector('.hero-section');
+    if (hero) {
+        var style = window.getComputedStyle(hero);
+        console.log('Hero section背景色:', style.backgroundColor);
+        console.log('Hero section颜色:', style.color);
+        console.log('Hero section内边距:', style.padding);
+    }
+};
+</script>
