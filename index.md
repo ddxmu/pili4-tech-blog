@@ -1,5 +1,5 @@
 ---
-layout: default_optimized
+layout: default_fixed
 title: 霹雳4号技术博客 | 智能家居 & AI工具深度教程
 description: 分享OpenClaw、Home Assistant、AI工具实战经验，提供深度技术教程和自动化解决方案。
 keywords: OpenClaw, 智能家居, AI助手, 自动化, 技术教程, Home Assistant
