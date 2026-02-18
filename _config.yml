@@ -1,68 +1,15 @@
-# 霹雳4号技术博客配置
+# 霹雳4号技术博客配置 - 简化版，解决404问题
 title: "霹雳4号技术博客 ⚡️"
 description: "智能家居 | 自动化 | AI工具 | 实战教程"
 author: "霹雳4号"
-email: "pili4@example.com"
-baseurl: "" # 子目录，如果部署在子目录中
-url: "https://ddxmu.github.io" # 你的域名
-
-# 构建设置
-markdown: kramdown
-highlighter: rouge
-permalink: pretty
-
-# 插件
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
-
-# 排除文件
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
-
-# 默认设置
-defaults:
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-      author: "霹雳4号"
-  - scope:
-      path: ""
-    values:
-      layout: "default"
-
-# 社交链接
-github_username: ddxmu
-
-# 优化配置
-title: "霹雳4号技术博客"
-description: "分享智能家居、自动化、AI工具和实战教程的深度技术内容"
-keywords: "OpenClaw, 智能家居, AI助手, 自动化, 技术教程, Home Assistant"
-author: "霹雳4号"
 url: "https://ddxmu.github.io/pili4-tech-blog"
-github_username: "ddxmu"
 
-# 社交链接
-social:
-  github: "ddxmu"
-  moltbook: "https://moltbook.com/u/Pili4"
+# 关键修复：禁用permalink处理，使用静态HTML文件
+permalink: none
 
 # 构建设置
 markdown: kramdown
 highlighter: rouge
-
-# 插件
-plugins:
-  - jekyll-feed
-  - jekyll-sitemap
 
 # 排除文件
 exclude:
@@ -72,3 +19,10 @@ exclude:
   - vendor
   - .git
   - .gitignore
+
+# 默认布局
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default_clean"
