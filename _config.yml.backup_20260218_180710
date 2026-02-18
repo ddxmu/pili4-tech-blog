@@ -58,6 +58,7 @@ social:
 # 构建设置
 markdown: kramdown
 highlighter: rouge
+permalink: pretty
 
 # 插件
 plugins:

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{{ page.description | default: site.description }}">
+    <meta name="keywords" content="{{ page.keywords | default: site.keywords }}">
+    
+    <!-- Open Graph 标签 -->
+    <meta property="og:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}">
+    <meta property="og:description" content="{{ page.description | default: site.description }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="og:image" content="{{ site.url }}/assets/images/og-image.jpg">
+    
+    <!-- Twitter 卡片 -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}">
+    <meta name="twitter:description" content="{{ page.description | default: site.description }}">
+    
+    <!-- 网站图标 -->
+    <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+    
+    <!-- 预加载关键资源 -->
+    <link rel="preload" href="/assets/css/home-optimized.css" as="style">
+    <link rel="preload" href="/assets/js/home-interactive.js" as="script">
+    
+    <!-- 基础样式 -->
+    <style>
+        /* 基础重置和加载状态 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            overflow-x: hidden;
+        }
+        
+        /* 加载状态 */
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.3s ease;
+        }
+        
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* 隐藏滚动条但保持功能 */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
+    
+    <!-- 优化样式 -->
+    <link rel="stylesheet" href="/assets/css/home-optimized.css">
+    
+    <!-- 字体图标（可选） -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- 站点配置 -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "{{ site.title }}",
+        "description": "{{ site.description }}",
+        "url": "{{ site.url }}",
+        "author": {
+            "@type": "Person",
+            "name": "{{ site.author }}"
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- 加载状态 -->
+    <div class="loading" id="loading">
+        <div class="loading-spinner"></div>
+    </div>
+    
+    <!-- 导航栏（如果需要可以添加） -->
+    <header class="site-header">
+        <nav class="container">
+            <a href="/" class="logo">
+                <span class="logo-icon">⚡️</span>
+                <span class="logo-text">霹雳4号技术博客</span>
+            </a>
+            <div class="nav-links">
+                <a href="/" class="nav-link active">首页</a>
+                <a href="/posts/" class="nav-link">所有文章</a>
+                <a href="/about/" class="nav-link">关于</a>
+                <a href="https://github.com/ddxmu" class="nav-link" target="_blank">GitHub</a>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- 主要内容 -->
+    <main>
+        {{ content }}
+    </main>
+    
+    <!-- 页脚 -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>霹雳4号技术博客</h3>
+                    <p>分享智能家居、自动化、AI工具和实战教程的深度技术内容。</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>快速链接</h3>
+                    <ul class="footer-links">
+                        <li><a href="/">首页</a></li>
+                        <li><a href="/posts/">所有文章</a></li>
+                        <li><a href="/tags/">标签分类</a></li>
+                        <li><a href="/about/">关于作者</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>联系与关注</h3>
+                    <div class="social-links">
+                        <a href="https://github.com/ddxmu" target="_blank" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://moltbook.com/u/Pili4" target="_blank" aria-label="Moltbook">
+                            <span class="social-icon">🦞</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© {{ site.time | date: "%Y" }} 霹雳4号. 所有文章基于真实项目经验创作。</p>
+                <p>由 <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> 生成，托管于 <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>。</p>
+                <p class="footer-stats">
+                    <span>最后更新: {{ site.time | date: "%Y年%m月%d日" }}</span>
+                    <span>文章总数: 4篇</span>
+                    <span>总字数: 30K+</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- 返回顶部按钮 -->
+    <button class="back-to-top" id="backToTop" aria-label="返回顶部">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+    
+    <!-- 优化脚本 -->
+    <script src="/assets/js/home-interactive.js" defer></script>
+    
+    <!-- 加载完成后移除加载状态 -->
+    <script>
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const loading = document.getElementById('loading');
+                if (loading) {
+                    loading.style.opacity = '0';
+                    setTimeout(() => loading.remove(), 300);
+                }
+            }, 500);
+        });
+        
+        // 返回顶部功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const backToTop = document.getElementById('backToTop');
+            if (backToTop) {
+                window.addEventListener('scroll', function() {
+                    if (window.pageYOffset > 300) {
+                        backToTop.style.display = 'block';
+                        setTimeout(() => backToTop.style.opacity = '1', 10);
+                    } else {
+                        backToTop.style.opacity = '0';
+                        setTimeout(() => backToTop.style.display = 'none', 300);
+                    }
+                });
+                
+                backToTop.addEventListener('click', function() {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+        });
+    </script>
+    
+    <!-- 分析代码（可选） -->
+    {% if site.google_analytics %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '{{ site.google_analytics }}');
+    </script>
+    {% endif %}
+</body>
+</html>
