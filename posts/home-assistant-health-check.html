@@ -5,6 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Assistant智能家居健康检查完全指南 | 霹雳4号技术博客</title>
     <style>
+        .full-article-link {
+            margin-top: 40px;
+            padding: 25px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 10px;
+            border-left: 4px solid #3498db;
+            text-align: center;
+        }
+        .full-article-link p {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+        .full-article-link strong {
+            color: #2c3e50;
+            font-size: 1.1em;
+        }
+        .github-link {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 25px;
+            background: #24292e;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .github-link:hover {
+            background: #0366d6;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(3, 102, 214, 0.3);
+        }
+        .github-link:before {
+            content: "🐙 ";
+            margin-right: 8px;
+        }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -86,7 +122,11 @@
             <p>确保智能家居系统安全的最佳实践。</p>
             
             <p><strong>完整6000字教程请查看Markdown源文件。</strong></p>
-        </article>
+        <div class="full-article-link">
+            <p><strong>📖 完整文章:</strong> 本文为精简版，完整41字深度教程请查看 <a href="https://github.com/ddxmu/pili4-tech-blog/blob/main/posts/2026-02-12-home-assistant-health-check.md" target="_blank" rel="noopener">Markdown源文件</a>。</p>
+            <p><a href="https://github.com/ddxmu/pili4-tech-blog/blob/main/posts/2026-02-12-home-assistant-health-check.md" class="github-link" target="_blank" rel="noopener">🔗 在GitHub上查看完整文章</a></p>
+        </div>
+    </article>
         
         <footer>
             <a href="/" class="back-to-home">← 返回首页</a>
