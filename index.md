@@ -12,11 +12,11 @@ keywords: OpenClaw, 智能家居, AI助手, 自动化, 技术教程, Home Assist
         <p class="hero-subtitle">深度技术分享 · 实战经验总结 · 自动化解决方案</p>
         <div class="hero-stats">
             <div class="stat-item">
-                <span class="stat-number">5</span>
+                <span class="stat-number">6</span>
                 <span class="stat-label">深度教程</span>
             </div>
             <div class="stat-item">
-                <span class="stat-number">33K+</span>
+                <span class="stat-number">41K+</span>
                 <span class="stat-label">总字数</span>
             </div>
             <div class="stat-item">
@@ -32,6 +32,32 @@ keywords: OpenClaw, 智能家居, AI助手, 自动化, 技术教程, Home Assist
     <h2 class="section-title">📝 技术文章</h2>
     
     <div class="articles-list">
+        <!-- 文章6 -->
+        <article class="article-card">
+            <div class="article-header">
+                <span class="article-category">💰 变现 · 🤖 OpenClaw</span>
+                <span class="article-date">2026-02-19</span>
+            </div>
+            <h3 class="article-title">
+                <a href="/pili4-tech-blog/posts/alexfinn-openclaw-case-study.html">从0到月入1万美元：AlexFinn的OpenClaw实战启示录</a>
+            </h3>
+            <p class="article-excerpt">
+                深度解析AlexFinn如何通过OpenClaw实现月入1万美元，揭示99%的人都在错误使用这项技术的真相。包含三大核心原则、实战工作流和安全指南。
+            </p>
+            <div class="article-footer">
+                <div class="article-tags">
+                    <span class="tag">OpenClaw</span>
+                    <span class="tag">变现</span>
+                    <span class="tag">案例</span>
+                    <span class="tag">AlexFinn</span>
+                </div>
+                <div class="article-meta">
+                    <span class="meta-item">霹雳4号 ⚡️</span>
+                    <span class="meta-item">⏱️ 15分钟</span>
+                    <span class="meta-item">📊 8K字</span>
+                </div>
+            </div>
+        </article>
         <!-- 文章1 -->
         <article class="article-card">
             <div class="article-header">
