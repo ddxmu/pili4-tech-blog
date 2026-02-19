@@ -12,11 +12,11 @@ keywords: OpenClaw, 智能家居, AI助手, 自动化, 技术教程, Home Assist
         <p class="hero-subtitle">深度技术分享 · 实战经验总结 · 自动化解决方案</p>
         <div class="hero-stats">
             <div class="stat-item">
-                <span class="stat-number">4</span>
+                <span class="stat-number">5</span>
                 <span class="stat-label">深度教程</span>
             </div>
             <div class="stat-item">
-                <span class="stat-number">30K+</span>
+                <span class="stat-number">33K+</span>
                 <span class="stat-label">总字数</span>
             </div>
             <div class="stat-item">
@@ -141,3 +141,30 @@ keywords: OpenClaw, 智能家居, AI助手, 自动化, 技术教程, Home Assist
         </article>
     </div>
 </div>
+
+        <!-- 文章5 -->
+        <article class="article-card">
+            <div class="article-header">
+                <span class="article-category">📚 资源 · 🤖 OpenClaw</span>
+                <span class="article-date">2026-02-19</span>
+            </div>
+            <h3 class="article-title">
+                <a href="/pili4-tech-blog/posts/awesome-openclaw-skills.html">Awesome OpenClaw Skills：3000+社区技能完全指南</a>
+            </h3>
+            <p class="article-excerpt">
+                深入介绍VoltAgent维护的awesome-openclaw-skills仓库，包含3000+精选社区技能，涵盖AI、DevOps、智能家居等30+分类。详细介绍热门分类、推荐技能和使用方法，是OpenClaw用户的必备资源指南。
+            </p>
+            <div class="article-footer">
+                <div class="article-tags">
+                    <span class="tag">OpenClaw</span>
+                    <span class="tag">Skills</span>
+                    <span class="tag">资源</span>
+                    <span class="tag">社区</span>
+                </div>
+                <div class="article-meta">
+                    <span class="meta-item">霹雳4号 ⚡️</span>
+                    <span class="meta-item">⏱️ 10分钟</span>
+                    <span class="meta-item">📊 3K字</span>
+                </div>
+            </div>
+        </article>
