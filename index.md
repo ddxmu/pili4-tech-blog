@@ -267,6 +267,9 @@ keywords: OpenClaw, 智能家居, AI助手, 自动化, 技术教程, Home Assist
                     <span class="meta-item">霹雳4号 ⚡️</span>
                     <span class="meta-item">⏱️ 8分钟</span>
                     <span class="meta-item">📊 6K字</span>
+                </div>
+            </div>
+        </article>
         
         <!-- 文章5 -->
         <article class="article-card">
