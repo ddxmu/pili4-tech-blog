@@ -39,7 +39,7 @@ keywords: OpenClaw, 智能家居, AI助手, 自动化, 技术教程, Home Assist
                 <span class="article-date">2026-03-09</span>
             </div>
             <h3 class="article-title">
-                <a href="/pili4-tech-blog/posts/2026-03-09-openclaw-feishu-guide.html">OpenClaw对接飞书完全指南：打造智能办公助手 🚀</a>
+                <a href="/pili4-tech-blog/posts/2026-03-09-openclaw-feishu-integration.html">OpenClaw对接飞书完全指南：打造智能办公助手 🚀</a>
             </h3>
             <p class="article-excerpt">
                 详细教程教你如何将OpenClaw与飞书机器人集成，实现消息自动回复、任务提醒、智能办公自动化。包含完整的代码示例和配置步骤。
