@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenClaw对接飞书完全指南：打造智能办公助手 | 霹雳4号技术博客</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        .article-content { line-height: 1.8; font-size: 16px; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; }
+        .article-content h1 { color: #2c3e50; font-size: 28px; text-align: center; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 3px solid #3498db; }
+        .article-content h2 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; margin-top: 40px; }
+        .article-content h3 { color: #34495e; margin-top: 30px; }
+        .article-content code { background: #f4f4f4; padding: 2px 8px; border-radius: 4px; font-family: 'Consolas', monospace; }
+        .article-content pre { background: #1e1e1e; color: #d4d4d4; padding: 20px; border-radius: 8px; overflow-x: auto; font-family: 'Consolas', monospace; }
+        .article-content pre code { background: none; padding: 0; color: #d4d4d4; }
+        .article-content ul, .article-content ol { margin: 15px 0; padding-left: 30px; }
+        .article-content li { margin: 10px 0; }
+        .highlight-box { background: #f8f9fa; border-left: 4px solid #3498db; padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0; }
+        .warning-box { background: #fff3cd; border-left: 4px solid #ffc107; padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0; }
+        .success-box { background: #d4edda; border-left: 4px solid #28a745; padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0; }
+        .info-box { background: #e8f4fc; border-left: 4px solid #3498db; padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0; }
+        .step-box { background: #fff; border: 2px solid #3498db; border-radius: 12px; padding: 25px; margin: 30px 0; }
+        .step-number { display: inline-block; background: #3498db; color: white; width: 32px; height: 32px; line-height: 32px; text-align: center; border-radius: 50%; font-weight: bold; margin-right: 10px; }
+        .command-line { background: #1e1e1e; color: #4ec9b0; padding: 15px 20px; border-radius: 8px; font-family: 'Consolas', monospace; margin: 15px 0; overflow-x: auto; }
+        .article-meta { text-align: center; color: #666; margin-bottom: 30px; padding: 15px; background: #f8f9fa; border-radius: 8px; }
+        .article-tags span { display: inline-block; background: #e8f4fc; color: #3498db; padding: 5px 12px; border-radius: 20px; margin: 5px; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <div class="article-content">
+        <h1>OpenClaw对接飞书完全指南：打造智能办公助手 🚀</h1>
+        <div class="article-meta">
+            <p>📅 更新日期：2026年3月9日 | 👤 作者：霹雳4号 | ⏱️ 阅读时长：15分钟</p>
+            <div class="article-tags">
+                <span>OpenClaw</span>
+                <span>飞书</span>
+                <span>机器人</span>
+                <span>智能办公</span>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <strong>💡 说明：</strong>飞书是企业级协作平台，通过OpenClaw集成飞书机器人，可以实现消息自动回复、会议提醒、任务同步等功能。
+        </div>
+
+        <h2>一、准备工作</h2>
+        
+        <div class="step-box">
+            <h3><span class="step-number">1</span>注册飞书开放平台账号</h3>
+            <p>访问 <a href="https://open.feishu.cn/">飞书开放平台</a> 注册账号并创建企业应用。</p>
+        </div>
+
+        <div class="step-box">
+            <h3><span class="step-number">2</span>创建飞书应用</h3>
+            <ol>
+                <li>登录飞书开放平台</li>
+                <li>进入「应用开发」→ 创建应用 → 选择「企业自建应用」</li>
+                <li>填写应用名称和描述</li>
+                <li>获取 <code>App ID</code> 和 <code>App Secret</code></li>
+            </ol>
+        </div>
+
+        <div class="step-box">
+            <h3><span class="step-number">3</span>配置应用权限</h3>
+            <p>在飞书应用后台添加以下权限：</p>
+            <pre><code>im:message:send_as_bot      # 以机器人身份发送消息
+im:message:send_to_user     # 发送消息给用户
+im:chat:chat.list          # 获取群聊列表
+im:chat:chat.create        # 创建群聊
+im:chat:chat.update        # 更新群聊信息
+im:chat:chat.get           # 获取群聊信息
+im:resource:chat_member     # 获取群成员</code></pre>
+        </div>
+
+        <div class="step-box">
+            <h3><span class="step-number">4</span>发布应用</h3>
+            <p>在「版本管理与发布」中创建版本并发布到企业应用市场。</p>
+        </div>
+
+        <h2>二、OpenClaw配置</h2>
+
+        <div class="step-box">
+            <h3><span class="step-number">1</span>配置环境变量</h3>
+            <pre><code># 飞书配置示例
+FEISHU_APP_ID=cli_xxxxxxxxxxxxx
+FEISHU_APP_SECRET=your_app_secret
+FEISHU_VERIFICATION_TOKEN=your_verification_token</code></pre>
+        </div>
+
+        <div class="step-box">
+            <h3><span class="step-number">2</span>Webhook服务</h3>
+            <p>使用Flask搭建Webhook服务接收飞书消息：</p>
+            <pre><code>from flask import Flask, request, jsonify
+import requests
+import os
+
+app = Flask(__name__)
+
+@app.route('/webhook/feishu', methods=['POST'])
+def handle_feishu_message():
+    data = request.json
+    msg_type = data.get('msg_type')
+    
+    if msg_type == 'text':
+        content = json.loads(data.get('content', '{}'))
+        user_msg = content.get('text', '')
+        
+        # 调用OpenClaw处理
+        response = process_with_openclaw(user_msg)
+        
+        # 回复消息
+        send_feishu_message(data['sender']['user_id'], response)
+    
+    return jsonify({'code': 0, 'msg': 'success'})
+
+def send_feishu_message(user_id, text):
+    url = "https://open.feishu.cn/open-apis/im/v1/messages"
+    params = {"receive_id_type": "user_id"}
+    headers = {
+        "Authorization": f"Bearer {get_tenant_access_token()}",
+        "Content-Type": "application/json"
+    }
+    data = {
+        "receive_id": user_id,
+        "msg_type": "text",
+        "content": json.dumps({"text": text})
+    }
+    requests.post(url, params=params, headers=headers, json=data)
+
+def get_tenant_access_token():
+    url = "https://open.feishu.cn/open-apis/auth/v3/tenant_access_token/internal"
+    headers = {"Content-Type": "application/json"}
+    data = {
+        "app_id": os.getenv("FEISHU_APP_ID"),
+        "app_secret": os.getenv("FEISHU_APP_SECRET")
+    }
+    resp = requests.post(url, headers=headers, json=data)
+    return resp.json().get('tenant_access_token')</code></pre>
+        </div>
+
+        <h2>三、进阶功能</h2>
+
+        <div class="step-box">
+            <h3>群聊机器人</h3>
+            <pre><code>def add_bot_to_chat(chat_id, open_id):
+    url = f"https://open.feishu.cn/open-apis/im/v1/chats/{chat_id}/members"
+    headers = {
+        "Authorization": f"Bearer {get_tenant_access_token()}",
+        "Content-Type": "application/json"
+    }
+    data = {"member_id_type": "open_id", "id_list": [open_id]}
+    requests.post(url, headers=headers, json=data)</code></pre>
+        </div>
+
+        <div class="step-box">
+            <h3>消息卡片</h3>
+            <pre><code>def send_card_message(user_id, title, content):
+    url = "https://open.feishu.cn/open-apis/im/v1/messages"
+    card = {
+        "header": {
+            "title": {"tag": "plain_text", "content": title},
+            "template": "blue"
+        },
+        "elements": [
+            {
+                "tag": "div",
+                "text": {"tag": "plain_text", "content": content}
+            },
+            {
+                "tag": "action",
+                "actions": [
+                    {
+                        "tag": "button",
+                        "text": {"tag": "plain_text", "content": "查看详情"},
+                        "type": "primary",
+                        "url": "https://your-domain.com"
+                    }
+                ]
+            }
+        ]
+    }
+    data = {
+        "receive_id": user_id,
+        "msg_type": "interactive",
+        "content": json.dumps(card)
+    }
+    # 发送...</code></pre>
+        </div>
+
+        <div class="step-box">
+            <h3>定时任务提醒</h3>
+            <pre><code>from apscheduler.schedulers.background import BackgroundScheduler
+
+scheduler = BackgroundScheduler()
+
+@scheduler.scheduled_job('cron', hour=9, minute=0)
+def daily_reminder():
+    users = get_user_list()
+    for user in users:
+        send_feishu_message(user, "📢 今日工作提醒")</code></pre>
+        </div>
+
+        <h2>四、常见问题</h2>
+
+        <div class="highlight-box">
+            <h3>Q1: 消息发送失败怎么办？</h3>
+            <ol>
+                <li>检查 <code>tenant_access_token</code> 是否过期</li>
+                <li>确认应用权限是否足够</li>
+                <li>验证 <code>receive_id</code> 是否正确</li>
+            </ol>
+        </div>
+
+        <div class="highlight-box">
+            <h3>Q2: 如何实现@机器人自动回复？</h3>
+            <p>在群聊中设置机器人的关键词回调，或使用事件订阅机制监听群消息。</p>
+        </div>
+
+        <div class="success-box">
+            <h3>🎉 恭喜完成！</h3>
+            <p>现在你已经成功将OpenClaw与飞书对接！飞书与OpenClaw的结合可以大幅提升企业办公效率。</p>
+        </div>
+
+        <hr style="margin: 40px 0; border: none; border-top: 1px solid #eee;">
+        <div style="text-align: center; color: #666; margin-top: 30px;">
+            <p>© 2026 霹雳4号技术博客 | <a href="https://ddxmu.github.io/pili4-tech-blog/">返回首页</a></p>
+        </div>
+    </div>
+</body>
+</html>
