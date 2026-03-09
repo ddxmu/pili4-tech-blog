@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OpenClaw Windows安装完全指南：小白也能轻松上手 | 霹雳4号技术博客</title>
+    <title>OpenClaw Windows安装完全指南：官方推荐方式 | 霹雳4号技术博客</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <style>
         .article-content {
@@ -162,72 +162,68 @@
 </head>
 <body>
     <div class="article-content">
-        <h1>OpenClaw Windows安装完全指南：小白也能轻松上手 🚀</h1>
+        <h1>OpenClaw Windows安装完全指南：官方推荐方式 🦞</h1>
         
         <div class="article-meta">
-            <p>📅 更新日期：2026年3月9日 | 👤 作者：霹雳4号 | ⏱️ 阅读时长：10分钟</p>
+            <p>📅 更新日期：2026年3月9日 | 👤 作者：霹雳4号 | ⏱️ 阅读时长：8分钟</p>
             <div class="article-tags">
                 <span>OpenClaw</span>
                 <span>Windows</span>
+                <span>WSL2</span>
                 <span>安装教程</span>
-                <span>AI助手</span>
             </div>
+        </div>
+
+        <div class="info-box">
+            <strong>📢 说明：</strong>本文根据OpenClaw官方文档整理，官方推荐使用<strong>npm/pnpm</strong>方式安装，而不是Docker（Docker是可选的）。Windows用户需要通过WSL2运行。
         </div>
 
         <div class="toc">
             <h3>📑 目录</h3>
             <ul>
-                <li><a href="#一准备工作">一、准备工作</a></li>
-                <li><a href="#二安装wsl">二、安装WSL（Windows子系统）</a></li>
-                <li><a href="#三安装docker">三、安装Docker Desktop</a></li>
-                <li><a href="#四安装openclaw">四、安装OpenClaw</a></li>
-                <li><a href="#五配置启动">五、配置与启动</a></li>
-                <li><a href="#六常见问题">六、常见问题</a></li>
+                <li><a href="#前置要求">一、前置要求</a></li>
+                <li><a href="#安装wsl">二、安装WSL2（Windows子系统）</a></li>
+                <li><a href="#安装nodejs">三、安装Node.js</a></li>
+                <li><a href="#安装openclaw">四、安装OpenClaw</a></li>
+                <li><a href="#配置运行">五、配置与运行</a></li>
+                <li><a href="#常用命令">六、常用命令</a></li>
+                <li><a href="#常见问题">七、常见问题</a></li>
             </ul>
         </div>
 
-        <div class="info-box">
-            <strong>💡 说明：</strong>OpenClaw官方推荐在Linux或macOS上运行，但在Windows上可以通过WSL（Windows Subsystem for Linux）完美运行。本文将详细介绍每一步操作。
-        </div>
-
-        <h2 id="一准备工作">一、准备工作</h2>
+        <h2 id="前置要求">一、前置要求</h2>
         
         <div class="step-box">
-            <h3><span class="step-number">1</span>检查系统要求</h3>
+            <h3><span class="step-number">✅</span>系统要求</h3>
             <ul>
-                <li>Windows 10 版本 2004 或更高版本（Build 19041+）</li>
+                <li>Windows 10 版本 2004 或更高（Build 19041+）</li>
                 <li>Windows 11（推荐）</li>
+                <li><strong>Node.js ≥ 22</strong>（官方要求）</li>
                 <li>至少4GB内存（建议8GB+）</li>
-                <li>至少10GB可用磁盘空间</li>
+                <li>至少5GB可用磁盘空间</li>
             </ul>
         </div>
 
-        <div class="step-box">
-            <h3><span class="step-number">2</span>启用虚拟化</h3>
-            <p>打开任务管理器 → 性能 → CPU，确认"虚拟化"已启用。如果没有启用，需要在BIOS中开启。</p>
-        </div>
-
-        <h2 id="二安装wsl">二、安装WSL（Windows子系统 for Linux）</h2>
+        <h2 id="安装wsl">二、安装WSL2（Windows子系统 for Linux）</h2>
 
         <div class="step-box">
             <h3><span class="step-number">1</span>以管理员身份打开PowerShell</h3>
-            <p>右键点击开始菜单 → 选择"Windows PowerShell (管理员)"</p>
+            <p>右键点击开始菜单 → 选择<strong>"Windows PowerShell (管理员)"</strong></p>
         </div>
 
         <div class="step-box">
             <h3><span class="step-number">2</span>安装WSL2</h3>
-            <p>在PowerShell中执行以下命令：</p>
+            <p>在PowerShell中执行：</p>
             <div class="command-line">
                 <span class="prompt">PS C:\Windows\system32> </span><span class="command">wsl --install</span>
             </div>
             <div class="warning-box">
-                <strong>⚠️ 注意：</strong>如果提示"需要启用虚拟机平台功能"，执行以下命令：
+                <strong>⚠️ 注意：</strong>如果提示需要启用虚拟机平台功能，执行以下命令后<strong>重启电脑</strong>：
             </div>
             <div class="command-line">
                 <span class="prompt">PS C:\Windows\system32> </span><span class="command">dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart</span><br><br>
                 <span class="prompt">PS C:\Windows\system32> </span><span class="command">dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart</span>
             </div>
-            <p>然后<strong>重启电脑</strong>！</p>
         </div>
 
         <div class="step-box">
@@ -242,235 +238,180 @@
             <div class="command-line">
                 <span class="prompt">PS C:\Windows\system32> </span><span class="command">wsl --install -d Ubuntu</span>
             </div>
-            <p>安装完成后会提示设置用户名和密码：</p>
+            <p>安装完成后设置用户名和密码（密码输入时不显示是正常的）：</p>
             <div class="command-line">
                 <span class="prompt">Enter new UNIX username: </span><span class="command">pili4</span><br>
                 <span class="prompt">New password: </span><span class="command">********</span><br>
                 <span class="prompt">Retype password: </span><span class="command">********</span>
             </div>
-            <div class="success-box">
-                <strong>✅ 提示：</strong>设置密码时不会显示任何字符，这是正常的，输入后回车即可。
-            </div>
         </div>
 
         <div class="step-box">
             <h3><span class="step-number">5</span>打开Ubuntu终端</h3>
-            <p>在开始菜单找到"Ubuntu"并打开，或者在PowerShell中执行：</p>
-            <div class="command-line">
-                <span class="prompt">PS C:\Windows\system32> </span><span class="command">wsl -d Ubuntu</span>
-            </div>
+            <p>在开始菜单找到<strong>"Ubuntu"</strong>并打开</p>
         </div>
 
         <div class="step-box">
-            <h3><span class="step-number">6</span>更新Ubuntu软件源</h3>
+            <h3><span class="step-number">6</span>更新软件源</h3>
             <div class="command-line">
                 <span class="prompt">pili4@DESKTOP:~$ </span><span class="command">sudo apt update && sudo apt upgrade -y</span>
             </div>
-            <div class="warning-box">
-                <strong>⏳ 提示：</strong>第一次执行`sudo`需要输入密码，输入时不会显示任何字符。
-            </div>
         </div>
 
-        <h2 id="三安装docker">三、安装Docker Desktop</h2>
+        <h2 id="安装nodejs">三、安装Node.js</h2>
 
         <div class="step-box">
-            <h3><span class="step-number">1</span>下载Docker Desktop</h3>
-            <p>访问 Docker 官网下载：<a href="https://www.docker.com/products/docker-desktop/">https://www.docker.com/products/docker-desktop/</a></p>
-            <p>下载 Windows 版本（Docker Desktop Installer.exe）</p>
-        </div>
-
-        <div class="step-box">
-            <h3><span class="step-number">2</span>安装Docker Desktop</h3>
-            <p>双击安装程序，勾选"Use WSL 2 instead of Hyper-V"，然后点击"Install"</p>
-            <div class="warning-box">
-                <strong>⚠️ 注意：</strong>安装过程中会短暂中断网络连接，这是正常的。
-            </div>
-        </div>
-
-        <div class="step-box">
-            <h3><span class="step-number">3</span>启动Docker Desktop</h3>
-            <p>安装完成后，在开始菜单找到"Docker Desktop"并启动。首次启动需要等待几分钟初始化。</p>
-            <div class="success-box">
-                <strong>✅ 验证：</strong>在Ubuntu终端执行以下命令验证Docker是否正常运行：
+            <h3><span class="step-number">1</span>使用fnm安装Node.js（推荐）</h3>
+            <div class="command-line">
+                <span class="prompt">pili4@DESKTOP:~$ </span><span class="command">curl -fsSL https://fnm.vercel.app/install | bash</span>
             </div>
             <div class="command-line">
-                <span class="prompt">pili4@DESKTOP:~$ </span><span class="command">docker --version</span><br>
-                <span class="comment"># 输出：Docker version 24.0.x, build xxxxx</span><br><br>
-                <span class="prompt">pili4@DESKTOP:~$ </span><span class="command">docker ps</span><br>
-                <span class="comment"># 输出：CONTAINER ID   IMAGE   COMMAND   CREATED   STATUS   PORTS   NAMES</span>
+                <span class="prompt">pili4@DESKTOP:~$ </span><span class="command">source ~/.bashrc</span>
             </div>
-        </div>
-
-        <h2 id="四安装openclaw">四、安装OpenClaw</h2>
-
-        <div class="step-box">
-            <h3><span class="step-number">1</span>在Ubuntu中安装Docker Compose</h3>
             <div class="command-line">
-                <span class="prompt">pili4@DESKTOP:~$ </span><span class="command">sudo apt install docker.io -y</span><br><br>
-                <span class="prompt">pili4@DESKTOP:~$ </span><span class="command">sudo systemctl enable docker</span><br><br>
-                <span class="prompt">pili4@DESKTOP:~$ </span><span class="command">sudo usermod -aG docker $USER</span>
-            </div>
-            <div class="warning-box">
-                <strong>⚠️ 注意：</strong>执行完`usermod`后需要<strong>重新打开终端</strong>或重新登录WSL使权限生效。
+                <span class="prompt">pili4@DESKTOP:~$ </span><span class="command">fnm install 22 && fnm use 22</span>
             </div>
         </div>
 
         <div class="step-box">
-            <h3><span class="step-number">2</span>克隆OpenClaw仓库</h3>
+            <h3><span class="step-number">2</span>验证Node.js安装</h3>
             <div class="command-line">
-                <span class="prompt">pili4@DESKTOP:~$ </span><span class="command">cd ~ && git clone https://github.com/openclaw/openclaw.git</span>
+                <span class="prompt">pili4@DESKTOP:~$ </span><span class="command">node --version</span><br>
+                <span class="comment"># 输出：v22.x.x</span><br><br>
+                <span class="prompt">pili4@DESKTOP:~$ </span><span class="command">npm --version</span><br>
+                <span class="comment"># 输出：10.x.x</span>
+            </div>
+        </div>
+
+        <h2 id="安装openclaw">四、安装OpenClaw</h2>
+
+        <div class="step-box">
+            <h3><span class="step-number">1</span>全局安装OpenClaw</h3>
+            <div class="info-box">
+                <strong>💡 提示：</strong>官方推荐使用npm或pnpm安装。使用pnpm可以获得更好的开发体验。
+            </div>
+            <p><strong>方式A：使用npm（最简单）</strong></p>
+            <div class="command-line">
+                <span class="prompt">pili4@DESKTOP:~$ </span><span class="command">npm install -g openclaw@latest</span>
+            </div>
+            <p><strong>方式B：使用pnpm（推荐）</strong></p>
+            <div class="command-line">
+                <span class="prompt">pili4@DESKTOP:~$ </span><span class="command">npm install -g pnpm</span><br>
+                <span class="prompt">pili4@DESKTOP:~$ </span><span class="command">pnpm add -g openclaw@latest</span>
             </div>
         </div>
 
         <div class="step-box">
-            <h3><span class="step-number">3</span>进入目录并查看配置</h3>
+            <h3><span class="step-number">2</span>验证安装</h3>
             <div class="command-line">
-                <span class="prompt">pili4@DESKTOP:~$ </span><span class="command">cd openclaw && ls -la</span>
-            </div>
-            <p>会看到以下文件：</p>
-            <ul>
-                <li><code>docker-compose.yml</code> - Docker编排文件</li>
-                <li><code>.env.example</code> - 环境变量示例</li>
-                <li><code>README.md</code> - 说明文档</li>
-            </ul>
-        </div>
-
-        <div class="step-box">
-            <h3><span class="step-number">4</span>配置环境变量</h3>
-            <div class="command-line">
-                <span class="prompt">pili4@DESKTOP:~/openclaw$ </span><span class="command">cp .env.example .env</span>
-            </div>
-            <div class="warning-box">
-                <strong>✏️ 重要：</strong>编辑`.env`文件，填入你的API密钥：
-            </div>
-            <div class="command-line">
-                <span class="prompt">pili4@DESKTOP:~/openclaw$ </span><span class="command">nano .env</span>
-            </div>
-            <p>修改以下内容：</p>
-            <pre><code># OpenAI API配置
-OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-
-# 或者使用 Anthropic Claude
-ANTHROPIC_API_KEY=sk-ant-xxxxxxxxxxxxxxxxxxxxxxxx
-
-# Telegram配置（可选）
-TELEGRAM_BOT_TOKEN=your_telegram_bot_token</code></pre>
-            <div class="command-line">
-                <span class="comment"># 保存并退出：按 Ctrl+O，然后 Ctrl+X</span>
+                <span class="prompt">pili4@DESKTOP:~$ </span><span class="command">openclaw --version</span>
             </div>
         </div>
 
+        <h2 id="配置运行">五、配置与运行</h2>
+
         <div class="step-box">
-            <h3><span class="step-number">5</span>启动OpenClaw</h3>
+            <h3><span class="step-number">1</span>运行初始化向导（推荐）</h3>
+            <div class="info-box">
+                <strong>🎯 官方推荐：</strong>使用向导可以一步步完成所有配置，包括API密钥、频道连接、技能安装等。
+            </div>
             <div class="command-line">
-                <span class="prompt">pili4@DESKTOP:~/openclaw$ </span><span class="command">docker-compose up -d</span>
+                <span class="prompt">pili4@DESKTOP:~$ </span><span class="command">openclaw onboard --install-daemon</span>
             </div>
-            <div class="success-box">
-                <strong>✅ 启动成功！</strong>
-            </div>
-        </div>
-
-        <div class="step-box">
-            <h3><span class="step-number">6</span>查看运行状态</h3>
-            <div class="command-line">
-                <span class="prompt">pili4@DESKTOP:~/openclaw$ </span><span class="command">docker ps</span>
-            </div>
-            <p>应该看到以下容器运行中：</p>
-            <ul>
-                <li><code>openclaw-gateway</code> - 网关服务</li>
-                <li><code>openclaw-agent</code> - Agent服务</li>
-                <li><code>openclaw-web</code> - Web界面</li>
-            </ul>
-        </div>
-
-        <h2 id="五配置启动">五、配置与启动</h2>
-
-        <div class="step-box">
-            <h3><span class="step-number">1</span>访问Web界面</h3>
-            <p>打开浏览器访问：</p>
-            <div class="highlight-box">
-                <strong>🔗 http://localhost:18789</strong>
-            </div>
-            <p>应该能看到OpenClaw的Web界面了！</p>
-        </div>
-
-        <div class="step-box">
-            <h3><span class="step-number">2</span>配置Telegram（可选）</h3>
-            <p>如果你想通过Telegram与OpenClaw交互：</p>
+            <p>向导会提示你：</p>
             <ol>
-                <li>在Telegram中搜索@BotFather</li>
-                <li>发送命令<code>/newbot</code>创建新机器人</li>
-                <li>按照提示设置名称和用户名</li>
-                <li>复制Bot Token并填入<code>.env</code>文件</li>
-                <li>重启服务：<code>docker-compose restart</code></li>
+                <li>配置API密钥（OpenAI/Anthropic等）</li>
+                <li>设置Telegram/WhatsApp等频道</li>
+                <li>安装技能（可选）</li>
+                <li>安装后台服务（开机自启）</li>
             </ol>
         </div>
 
         <div class="step-box">
-            <h3><span class="step-number">3</span>常用命令</h3>
+            <h3><span class="step-number">2</span>手动启动Gateway（可选）</h3>
+            <p>如果不想用向导，可以手动启动：</p>
             <div class="command-line">
-                <span class="comment"># 查看日志</span><br>
-                <span class="prompt">pili4@DESKTOP:~/openclaw$ </span><span class="command">docker-compose logs -f</span><br><br>
-                <span class="comment"># 重启服务</span><br>
-                <span class="prompt">pili4@DESKTOP:~/openclaw$ </span><span class="command">docker-compose restart</span><br><br>
-                <span class="comment"># 停止服务</span><br>
-                <span class="prompt">pili4@DESKTOP:~/openclaw$ </span><span class="command">docker-compose down</span><br><br>
+                <span class="prompt">pili4@DESKTOP:~$ </span><span class="command">openclaw gateway --port 18789 --verbose</span>
+            </div>
+        </div>
+
+        <div class="step-box">
+            <h3><span class="step-number">3</span>访问控制台</h3>
+            <p>打开浏览器访问：</p>
+            <div class="highlight-box">
+                <strong>🔗 http://127.0.0.1:18789/</strong>
+            </div>
+            <p>在设置中填入Gateway Token即可使用。</p>
+        </div>
+
+        <h2 id="常用命令">六、常用命令</h2>
+
+        <div class="step-box">
+            <h3>日常使用命令</h3>
+            <div class="command-line">
+                <span class="comment"># 启动Gateway</span><br>
+                <span class="prompt">pili4@DESKTOP:~$ </span><span class="command">openclaw gateway</span><br><br>
+                <span class="comment"># 发送消息</span><br>
+                <span class="prompt">pili4@DESKTOP:~$ </span><span class="command">openclaw message send --to +1234567890 --message "Hello"</span><br><br>
+                <span class="comment"># 与助手对话</span><br>
+                <span class="prompt">pili4@DESKTOP:~$ </span><span class="command">openclaw agent --message "帮我写一首诗"</span><br><br>
+                <span class="comment"># 检查状态</span><br>
+                <span class="prompt">pili4@DESKTOP:~$ </span><span class="command">openclaw doctor</span><br><br>
                 <span class="comment"># 更新OpenClaw</span><br>
-                <span class="prompt">pili4@DESKTOP:~/openclaw$ </span><span class="command">git pull && docker-compose up -d</span>
+                <span class="prompt">pili4@DESKTOP:~$ </span><span class="command">npm update -g openclaw@latest</span>
             </div>
         </div>
 
-        <h2 id="六常见问题">六、常见问题</h2>
+        <h2 id="常见问题">七、常见问题</h2>
 
         <div class="highlight-box">
-            <h3>Q1: Docker启动失败怎么办？</h3>
-            <p>检查WSL2是否正确安装：</p>
+            <h3>Q1: npm安装报错权限不足？</h3>
+            <p>尝试使用pnpm代替npm，或者配置npm的prefix路径：</p>
             <div class="command-line">
-                <span class="prompt">PS C:\Windows\system32> </span><span class="command">wsl --list --verbose</span>
+                <span class="prompt">pili4@DESKTOP:~$ </span><span class="command">mkdir -p ~/.npm-global</span><br>
+                <span class="prompt">pili4@DESKTOP:~$ </span><span class="command">npm config set prefix '~/.npm-global'</span><br>
+                <span class="prompt">pili4@DESKTOP:~$ </span><span class="command">echo 'export PATH=~/.npm-global/bin:$PATH' >> ~/.bashrc</span>
             </div>
         </div>
 
         <div class="highlight-box">
-            <h3>Q2: 拉取Docker镜像很慢？</h3>
-            <p>建议配置Docker镜像加速器（国内源）：</p>
+            <h3>Q2: Node版本过低？</h3>
+            <p>使用fnm管理Node版本：</p>
             <div class="command-line">
-                <span class="prompt">pili4@DESKTOP:~$ </span><span class="command">sudo mkdir -p /etc/docker</span><br>
-                <span class="prompt">pili4@DESKTOP:~$ </span><span class="command">sudo tee /etc/docker/daemon.json <<EOF
-{
-  "registry-mirrors": ["https://docker.mirrors.ustc.edu.cn"]
-}
-EOF</span><br>
-                <span class="prompt">pili4@DESKTOP:~$ </span><span class="command">sudo systemctl daemon-reload</span><br>
-                <span class="prompt">pili4@DESKTOP:~$ </span><span class="command">sudo systemctl restart docker</span>
+                <span class="prompt">pili4@DESKTOP:~$ </span><span class="command">fnm install 22 --force</span><br>
+                <span class="prompt">pili4@DESKTOP:~$ </span><span class="command">fnm use 22</span>
             </div>
         </div>
 
         <div class="highlight-box">
-            <h3>Q3: 如何查看OpenClaw日志？</h3>
-            <div class="command-line">
-                <span class="prompt">pili4@DESKTOP:~/openclaw$ </span><span class="command">docker-compose logs -f agent</span>
-            </div>
-        </div>
-
-        <div class="highlight-box">
-            <h3>Q4: WSL2内存占用过高？</h3>
-            <p>创建<code>~/.wslconfig</code>文件限制内存：</p>
+            <h3>Q3: WSL2内存占用过高？</h3>
+            <p>创建<code>~/.wslconfig</code>限制内存：</p>
             <div class="command-line">
                 <span class="prompt">pili4@DESKTOP:~$ </span><span class="command">notepad.exe ~/.wslconfig</span>
             </div>
             <pre><code>[wsl2]
 memory=4GB
 processors=2</code></pre>
-            <p>然后在PowerShell中执行：</p>
+            <p>然后重启WSL：</p>
             <div class="command-line">
                 <span class="prompt">PS C:\Windows\system32> </span><span class="command">wsl --shutdown</span>
             </div>
         </div>
 
+        <div class="highlight-box">
+            <h3>Q4: 如何使用Docker安装？（可选）</h3>
+            <p>Docker是可选的，如果你想使用Docker方式：</p>
+            <div class="command-line">
+                <span class="prompt">pili4@DESKTOP:~$ </span><span class="command">git clone https://github.com/openclaw/openclaw.git</span><br>
+                <span class="prompt">pili4@DESKTOP:~$ </span><span class="command">cd openclaw</span><br>
+                <span class="prompt">pili4@DESKTOP:~/openclaw$ </span><span class="command">./docker-setup.sh</span>
+            </div>
+        </div>
+
         <div class="success-box">
             <h3>🎉 恭喜完成！</h3>
-            <p>现在你已经成功在Windows上安装了OpenClaw！快去试试和你的AI助手对话吧。</p>
-            <p>如果有任何问题，欢迎在评论区留言讨论。</p>
+            <p>现在你已经成功在Windows上安装了OpenClaw！快去访问控制台开始使用吧。</p>
+            <p>如果有任何问题，可以参考官方文档：<a href="https://docs.openclaw.ai">https://docs.openclaw.ai</a></p>
         </div>
 
         <hr style="margin: 40px 0; border: none; border-top: 1px solid #eee;">
