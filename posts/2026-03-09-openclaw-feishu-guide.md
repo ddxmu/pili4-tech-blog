@@ -1,5 +1,5 @@
 ---
-layout: default_clean
+layout: post
 title: OpenClaw对接飞书完全指南：打造智能办公助手 🚀
 description: 详细教程教你如何将OpenClaw与飞书机器人集成，实现消息自动回复、任务提醒、智能办公自动化。
 keywords: OpenClaw, 飞书, Feishu, 机器人, 智能办公, 自动化, ChatGPT
