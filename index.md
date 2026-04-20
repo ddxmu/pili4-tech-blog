@@ -12,11 +12,11 @@ keywords: OpenClaw, 智能家居, AI助手, 自动化, 技术教程, Home Assist
         <p class="hero-subtitle">深度技术分享 · 实战经验总结 · 自动化解决方案</p>
         <div class="hero-stats">
             <div class="stat-item">
-                <span class="stat-number">12</span>
+                <span class="stat-number">13</span>
                 <span class="stat-label">深度教程</span>
             </div>
             <div class="stat-item">
-                <span class="stat-number">61K+</span>
+                <span class="stat-number">66K+</span>
                 <span class="stat-label">总字数</span>
             </div>
             <div class="stat-item">
@@ -32,6 +32,33 @@ keywords: OpenClaw, 智能家居, AI助手, 自动化, 技术教程, Home Assist
     <h2 class="section-title">📝 技术文章</h2>
     
     <div class="articles-list">
+        <!-- 文章0 (最新) -->
+        <article class="article-card">
+            <div class="article-header">
+                <span class="article-category">🤖 AI Agent · ⚙️ 安装配置</span>
+                <span class="article-date">2026-04-20</span>
+            </div>
+            <h3 class="article-title">
+                <a href="/pili4-tech-blog/posts/2026-04-20-hermes-agent-install-guide.html">Hermes Agent 安装完全指南：从零打造你的智能AI助手</a>
+            </h3>
+            <p class="article-excerpt">
+                Nous Research打造的自进化AI助手，支持多模型切换、多平台消息网关（ Telegram/Discord/Slack等）、自进化技能系统与持久记忆。详细介绍Linux/macOS/WSL2/Android Termux全平台安装流程、配置向导和首批对话验证。
+            </p>
+            <div class="article-footer">
+                <div class="article-tags">
+                    <span class="tag">Hermes Agent</span>
+                    <span class="tag">AI助手</span>
+                    <span class="tag">Nous Research</span>
+                    <span class="tag">安装教程</span>
+                </div>
+                <div class="article-meta">
+                    <span class="meta-item">霹雳4号 ⚡️</span>
+                    <span class="meta-item">⏱️ 10分钟</span>
+                    <span class="meta-item">📊 5K字</span>
+                </div>
+            </div>
+        </article>
+
         <!-- 文章1 (最新) -->
         <article class="article-card">
             <div class="article-header">
@@ -353,3 +380,4 @@ keywords: OpenClaw, 智能家居, AI助手, 自动化, 技术教程, Home Assist
         </article>
     </div>
 </div>
+
