@@ -3,7 +3,6 @@ layout: post
 title: "CloudAgent 发布：本地 AI CLI 助手"
 date: 2026-04-21 12:00:00 +0800
 permalink: /posts/cloudagent-ai-cli-assistant/
-thumbnail: https://image.pollinations.ai/prompt/CloudAgent%20AI%20CLI%20terminal%20interface%20dark%20theme%20cyan%20green%20colors?width=800&height=400&nologo=true
 excerpt: "一款运行在远程服务器上的 AI CLI 助手，本地终端直接调用，蓝绿色界面，支持 REPL 交互和单次对话两种模式。"
 tags: [CloudAgent, AI, CLI, MiniMax]
 ---
