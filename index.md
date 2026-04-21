@@ -32,6 +32,21 @@ keywords: OpenClaw, 智能家居, AI助手, 自动化, 技术教程, Home Assist
     <h2 class="section-title">📝 技术文章</h2>
     
     <div class="articles-list">
+
+        <a href="/pili4-tech-blog/posts/cloudagent-ai-cli-assistant/" class="article-card">
+            <div class="article-thumbnail">
+                <img src="https://image.pollinations.ai/prompt/CloudAgent%20AI%20CLI%20terminal%20interface%20dark%20theme%20cyan%20green%20colors?width=800&height=400&nologo=true" alt="CloudAgent 发布：本地 AI CLI 助手" loading="lazy">
+            </div>
+            <div class="article-content">
+                <h3 class="article-title">CloudAgent 发布：本地 AI CLI 助手</h3>
+                <p class="article-excerpt">一款运行在远程服务器上的 AI CLI 助手，本地终端直接调用，蓝绿色界面，支持 REPL 交互和单次对话两种模式。</p>
+                <div class="article-meta">
+                    <span class="article-date">2026-04-21</span>
+                    <span class="article-tags"><tag>CloudAgent</tag> <tag>AI</tag> <tag>CLI</tag></span>
+                </div>
+            </div>
+        </a>
+
         <!-- 文章0 (最新) -->
         <article class="article-card">
             <div class="article-header">
