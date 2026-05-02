@@ -3,7 +3,7 @@ layout: post
 title: "Hermes Agent Installation Guide — Windows (WSL2) & Linux"
 date: 2025-01-15
 categories: [AI Tools, Installation]
-permalink: /pili4-tech-blog/posts/hermes-agent-installation/
+permalink: /posts/hermes-agent-installation/
 ---
 
 # Hermes Agent Installation Guide — Windows (WSL2) & Linux
