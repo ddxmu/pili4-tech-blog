@@ -16,7 +16,7 @@ keywords: OpenClaw, 智能家居, AI助手, 自动化, 技术教程, Home Assist
                 <span class="stat-label">深度教程</span>
             </div>
             <div class="stat-item">
-                <span class="stat-number">66K+</span>
+                <span class="stat-number">80K+</span>
                 <span class="stat-label">总字数</span>
             </div>
             <div class="stat-item">
