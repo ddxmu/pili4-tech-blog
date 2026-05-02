@@ -33,6 +33,29 @@ keywords: OpenClaw, 智能家居, AI助手, 自动化, 技术教程, Home Assist
     
     <div class="articles-list">
 
+          <div class="article-card">
+            <a href="/pili4-tech-blog/posts/hermes-agent-installation/">
+              <div class="card-header">
+                <span class="tag">AI Tools</span>
+                <span class="date">2025-01-15</span>
+              </div>
+              <h3>Hermes Agent Installation Guide — Windows (WSL2) & Linux</h3>
+              <p>Step-by-step guide for installing Hermes Agent on Windows via WSL2 and native Linux. Covers pre-requisites, API key configuration, and troubleshooting.</p>
+            </a>
+          </div>
+
+          <div class="article-card">
+            <a href="/pili4-tech-blog/posts/openclaw-installation-handbook/">
+              <div class="card-header">
+                <span class="tag">AI Tools</span>
+                <span class="date">2025-01-15</span>
+              </div>
+              <h3>OpenClaw Installation Handbook — Windows / Linux / macOS</h3>
+              <p>Comprehensive installation guide covering 6 methods on Windows (PowerShell, WSL2, Node/npm, Docker, source, VM), plus Linux and macOS. Includes Ollama local model setup.</p>
+            </a>
+          </div>
+        
+
         <a href="/pili4-tech-blog/posts/cloudagent-ai-cli-assistant/" class="article-card">
             <div class="article-content">
                 <h3 class="article-title">CloudAgent 发布：本地 AI CLI 助手</h3>
