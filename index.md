@@ -12,7 +12,7 @@ keywords: OpenClaw, 智能家居, AI助手, 自动化, 技术教程, Home Assist
         <p class="hero-subtitle">深度技术分享 · 实战经验总结 · 自动化解决方案</p>
         <div class="hero-stats">
             <div class="stat-item">
-                <span class="stat-number">13</span>
+                <span class="stat-number">16</span>
                 <span class="stat-label">深度教程</span>
             </div>
             <div class="stat-item">
