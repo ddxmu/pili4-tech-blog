@@ -34,7 +34,7 @@ keywords: OpenClaw, 智能家居, AI助手, 自动化, 技术教程, Home Assist
     <div class="articles-list">
 
           <div class="article-card">
-            <a href="/pili4-tech-blog/posts/hermes-agent-installation/">
+            <a href="/posts/hermes-agent-installation/">
               <div class="card-header">
                 <span class="tag">AI Tools</span>
                 <span class="date">2025-01-15</span>
@@ -45,7 +45,7 @@ keywords: OpenClaw, 智能家居, AI助手, 自动化, 技术教程, Home Assist
           </div>
 
           <div class="article-card">
-            <a href="/pili4-tech-blog/posts/openclaw-installation-handbook/">
+            <a href="/posts/openclaw-installation-handbook/">
               <div class="card-header">
                 <span class="tag">AI Tools</span>
                 <span class="date">2025-01-15</span>
